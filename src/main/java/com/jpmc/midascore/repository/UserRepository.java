@@ -9,4 +9,3 @@ public interface UserRepository extends CrudRepository<UserRecord, Long> {
     UserRecord findByName(String name);
     Optional<UserRecord> findById(Long id);
 }
-

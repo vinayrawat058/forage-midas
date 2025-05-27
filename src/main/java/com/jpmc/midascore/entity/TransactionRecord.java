@@ -19,16 +19,18 @@ public class TransactionRecord {
 
     private float amount;
     private Instant timestamp;
+    private float incentive;
 
     // Constructors
     public TransactionRecord() {
     }
 
-    public TransactionRecord(UserRecord sender, UserRecord recipient, float amount, Instant timestamp) {
+    public TransactionRecord(UserRecord sender, UserRecord recipient, float amount, float incentive, Instant timestamp) {
         this.sender = sender;
         this.recipient = recipient;
         this.amount = amount;
         this.timestamp = timestamp;
+        this.incentive = incentive;
     }
 
     // Getters and Setters
@@ -72,6 +74,16 @@ public class TransactionRecord {
         this.timestamp = timestamp;
     }
 
+
+    public float getIncentive()
+    {
+        return incentive;
+    }
+
+    public void setIncentive(float incentive) {
+        this.incentive = incentive;
+    }
+
     @Override
     public String toString() {
         return "TransactionRecord{" +
@@ -79,7 +91,9 @@ public class TransactionRecord {
                 ", sender=" + sender +
                 ", recipient=" + recipient +
                 ", amount=" + amount +
+                ", incentive=" + incentive + // Added line
                 ", timestamp=" + timestamp +
                 '}';
     }
+
 }
