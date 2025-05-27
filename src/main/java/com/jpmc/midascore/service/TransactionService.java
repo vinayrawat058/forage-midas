@@ -36,14 +36,12 @@ public class TransactionService {
         );
         float incentiveAmount = (incentive != null) ? incentive.getAmount() : 0f;
 
-        // Update balances
         sender.setBalance(sender.getBalance() - transaction.getAmount());
         recipient.setBalance(recipient.getBalance() + transaction.getAmount() + incentiveAmount);
 
         userRepository.save(sender);
         userRepository.save(recipient);
 
-        // Save transaction record with incentive (update your TransactionRecord entity to include an incentive field)
     }
 
 }
